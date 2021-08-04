@@ -1,0 +1,56 @@
+body {                         /*убираем стандартные отступы*/
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.chat_window {                /*создаем флекс контейнер для чата с выравниванием в колонку*/
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  width: 100vw;               /*высота и ширина под экран*/
+  height: 100vh;
+  background: bisque;
+}
+
+.header_nav {                   /*верхний блок с навигацией*/
+  height: 50px;
+  flex: 0 0 auto;               /*блок не будет увеличиваться,сжиматься при смене размеров окна и автоматически подстроится под контент в ширину*/
+  border: solid 2px red;
+}
+
+.users_messages_container {               /*контейнер для блока с пользователями и блока с сообщениями, чтобы они оставались в одной строке*/
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.chat_users {                         /*блок с пользователями*/
+  flex: 0 0 200px;                        /* блок не будет увеличиваться и сжиматься. 200px с учетом сколл бара */
+  overflow-y: scroll;             /*скролл для вертикальной прокрутки*/
+  border: solid 2px orange;
+}
+
+.chat_users > ul {                  /*список пользователей*/
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chat_messages {                        /*блок с сообщениями чата*/
+  flex: 1 1 auto;                       /*блок может увеличиваться и сжиаться, занимает все свободное пространство*/
+  overflow-y: scroll;
+  border: solid 2px purple;
+}
+
+.chat_footer {                  /*подвал,блок работает по аналогии с хедером*/
+  height: 100px;
+  flex: 0 0 auto;
+  border: solid 2px green;
+}
+
+.chat_input {
+  width: 500px;
+}
